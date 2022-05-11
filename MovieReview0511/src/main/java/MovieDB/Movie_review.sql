@@ -46,3 +46,6 @@ select * from review
 select * from users
 select * from movie
 
+drop table review
+drop table users
+drop table movie
