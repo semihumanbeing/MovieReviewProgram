@@ -20,11 +20,11 @@ alter table review add reviewText varchar2(100) not null;
 alter table review
 	drop constraint fk_review_id
 
-insert into review values (1,'05-11',2,'aa','±Â');
-insert into review values (2,'05-11',2,'aa','±Â');
-insert into review values (3,'05-11',2,'aa','±Â');
-insert into review values (4,'05-11',2,'aa','±Â');
-insert into review values (5,'05-11',2,'aa','±Â');
+insert into review values (1,'05-11',2,'aa','êµ¿');
+insert into review values (2,'05-11',2,'aa','êµ¿');
+insert into review values (3,'05-11',2,'aa','êµ¿');
+insert into review values (4,'05-11',2,'aa','êµ¿');
+insert into review values (5,'05-11',2,'aa','êµ¿');
 
 ----------------------------------------------------------------------------------------
 
@@ -49,53 +49,15 @@ create table movie
 alter table movie
 	add constraint pk_movie_movieIdx primary key (movieIdx);
 	
-insert into movie values (1,'»ìÀÎÀÇ Ãß¾ï');
+insert into movie values (1,'ì‚´ì¸ì˜ ì¶”ì–µ');
 insert into movie values (2,'1987');
-insert into movie values (3,'¹üÁËµµ½Ã');
-insert into movie values (4,'¹üÁË¿ÍÀÇÀüÀï');
-insert into movie values (5,'¾Æ¸Ş¸®Ä­ ½ÎÀÌÄÚ');
-insert into movie values (6,'Æø·ÂÀÇ ¿ª»ç');
+insert into movie values (3,'ë²”ì£„ë„ì‹œ');
+insert into movie values (4,'ë²”ì£„ì™€ì˜ì „ìŸ');
+insert into movie values (5,'ì•„ë©”ë¦¬ì¹¸ ì‹¸ì´ì½”');
+insert into movie values (6,'í­ë ¥ì˜ ì—­ì‚¬');
 	
 
 select * from review
 select * from users
 select * from movie
-
-drop table movie
-
-
-----------------------------------------------------------------------------------------
-create or replace view selectAll
-as
-select r.id reviewId , r.movieIdx remoIdx, u.id userId , m.movieIdx moIdx , m.movieTitle 
-from review r
-	left outer join users u
-	on r.id = u.id
-		left outer join movie m
-		on r.movieIdx = m.movieIdx
-
-		
-insert into users values ('aa','aa');
-insert into users values ('bb','bb');
-
-
-
-select * from selectAll
-
-drop view selectAll
-
-
-
---½ÃÄö½ºÃß°¡ °Ô½Ã¹°¹øÈ£
-
-
-
-
-
-
-
-
-
-
-
 
