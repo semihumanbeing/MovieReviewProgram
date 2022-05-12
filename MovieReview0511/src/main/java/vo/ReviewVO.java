@@ -2,21 +2,17 @@ package vo;
 
 public class ReviewVO {
 	int reviewIdx;
-	String reviewDate;
 	int movieIdx;
 	String id;
+	String reviewDate;
+	String reviewText;
+	
 	
 	public int getReviewIdx() {
 		return reviewIdx;
 	}
 	public void setReviewIdx(int reviewIdx) {
 		this.reviewIdx = reviewIdx;
-	}
-	public String getReviewDate() {
-		return reviewDate;
-	}
-	public void setReviewDate(String reviewDate) {
-		this.reviewDate = reviewDate;
 	}
 	public int getMovieIdx() {
 		return movieIdx;
@@ -30,6 +26,20 @@ public class ReviewVO {
 	public void setId(String id) {
 		this.id = id;
 	}
+	public String getReviewDate() {
+		return reviewDate;
+	}
+	public void setReviewDate(String reviewDate) {
+		this.reviewDate = reviewDate;
+	}
+	public String getReviewText() {
+		return reviewText;
+	}
+	public void setReviewText(String reviewText) {
+		this.reviewText = reviewText;
+	}
+	
+	
 
 }
 
