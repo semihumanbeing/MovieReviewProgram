@@ -2,29 +2,31 @@
 create table review 
 (
 	reviewIdx int,
-	reviewDate varchar2(100),
 	movieIdx int,
-	id varchar2(100)
+	id varchar2(100),
+	reviewDate varchar2(100),
+	reviewText varchar2(100) not null
 
 )
 
+--기본키 & 외래키 추가
 alter table review
-	add constraint pk_review_postno primary key (reviewIdx);
+	add constraint pk_review_reviewIdx primary key (reviewIdx);
 alter table review
 	add constraint fk_review_movieIdx foreign key (movieIdx) references movie (movieIdx) ;
 alter table review
 	add constraint fk_review_id foreign key (id) references users (id);
 
-alter table review add reviewText varchar2(100) not null;
-	
+--기본키 & 외래키 지우기	
+alter table review
+	drop constraint pk_review_reviewIdx
+alter table review
+	drop constraint fk_review_movieIdx
 alter table review
 	drop constraint fk_review_id
 
-insert into review values (1,'05-11',2,'aa','굿');
-insert into review values (2,'05-11',2,'aa','굿');
-insert into review values (3,'05-11',2,'aa','굿');
-insert into review values (4,'05-11',2,'aa','굿');
-insert into review values (5,'05-11',2,'aa','굿');
+--테이블 지우기
+drop table review
 
 ----------------------------------------------------------------------------------------
 
@@ -36,6 +38,8 @@ create table users
 
 alter table users
 	add constraint pk_users_id primary key (id);
+	
+drop table users
 	
 ----------------------------------------------------------------------------------------
 
@@ -61,33 +65,38 @@ select * from review
 select * from users
 select * from movie
 
+--테이블 지우기
 drop table movie
 
 
 ----------------------------------------------------------------------------------------
+
+--뷰 만들기
 create or replace view selectAll
 as
-select r.id reviewId , r.movieIdx remoIdx, u.id userId , m.movieIdx moIdx , m.movieTitle 
+select  r.reviewIdx, r.id reviewId , r.movieIdx remoIdx, u.id userId , m.movieIdx moIdx , m.movieTitle 
 from review r
 	left outer join users u
 	on r.id = u.id
 		left outer join movie m
 		on r.movieIdx = m.movieIdx
+	order by r.reviewIdx
 
-		
-insert into users values ('aa','aa');
-insert into users values ('bb','bb');
-
-
-
+--뷰 조회
 select * from selectAll
 
+--뷰 삭제
 drop view selectAll
 
+----------------------------------------------------------------------------------------
 
+--시퀀스 생성
+create sequence seq_reviewIdx
 
---시퀀스추가 게시물번호
-
+--시퀀스 적용
+insert into review(reviewIdx) values(seq_reviewIdx.nextVal)
+-- ex)
+insert into review values(seq_reviewIdx.nextVal,1,'최규범',sysdate,'심금을 울리는 영화..')
 
 
 
