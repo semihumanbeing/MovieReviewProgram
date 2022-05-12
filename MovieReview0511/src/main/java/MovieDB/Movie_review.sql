@@ -2,29 +2,31 @@
 create table review 
 (
 	reviewIdx int,
-	reviewDate varchar2(100),
 	movieIdx int,
-	id varchar2(100)
+	id varchar2(100),
+	reviewDate varchar2(100),
+	reviewText varchar2(100) not null
 
 )
 
+--±âº»Å° & ¿Ü·¡Å° Ãß°¡
 alter table review
-	add constraint pk_review_postno primary key (reviewIdx);
+	add constraint pk_review_reviewIdx primary key (reviewIdx);
 alter table review
 	add constraint fk_review_movieIdx foreign key (movieIdx) references movie (movieIdx) ;
 alter table review
 	add constraint fk_review_id foreign key (id) references users (id);
 
-alter table review add reviewText varchar2(100) not null;
-	
+--±âº»Å° & ¿Ü·¡Å° Áö¿ì±â	
+alter table review
+	drop constraint pk_review_reviewIdx
+alter table review
+	drop constraint fk_review_movieIdx
 alter table review
 	drop constraint fk_review_id
 
-insert into review values (1,'05-11',2,'aa','êµ¿');
-insert into review values (2,'05-11',2,'aa','êµ¿');
-insert into review values (3,'05-11',2,'aa','êµ¿');
-insert into review values (4,'05-11',2,'aa','êµ¿');
-insert into review values (5,'05-11',2,'aa','êµ¿');
+--Å×ÀÌºí Áö¿ì±â
+drop table review
 
 ----------------------------------------------------------------------------------------
 
@@ -36,6 +38,8 @@ create table users
 
 alter table users
 	add constraint pk_users_id primary key (id);
+	
+drop table users
 	
 ----------------------------------------------------------------------------------------
 
@@ -49,15 +53,58 @@ create table movie
 alter table movie
 	add constraint pk_movie_movieIdx primary key (movieIdx);
 	
-insert into movie values (1,'ì‚´ì¸ì˜ ì¶”ì–µ');
+insert into movie values (1,'»ìÀÎÀÇ Ãß¾ï');
 insert into movie values (2,'1987');
-insert into movie values (3,'ë²”ì£„ë„ì‹œ');
-insert into movie values (4,'ë²”ì£„ì™€ì˜ì „ìŸ');
-insert into movie values (5,'ì•„ë©”ë¦¬ì¹¸ ì‹¸ì´ì½”');
-insert into movie values (6,'í­ë ¥ì˜ ì—­ì‚¬');
+insert into movie values (3,'¹üÁËµµ½Ã');
+insert into movie values (4,'¹üÁË¿ÍÀÇÀüÀï');
+insert into movie values (5,'¾Æ¸Ş¸®Ä­ ½ÎÀÌÄÚ');
+insert into movie values (6,'Æø·ÂÀÇ ¿ª»ç');
 	
 
 select * from review
 select * from users
 select * from movie
+
+--Å×ÀÌºí Áö¿ì±â
+drop table movie
+
+
+----------------------------------------------------------------------------------------
+
+--ºä ¸¸µé±â
+create or replace view selectAll
+as
+select  r.reviewIdx, r.id reviewId , r.movieIdx remoIdx, u.id userId , m.movieIdx moIdx , m.movieTitle 
+from review r
+	left outer join users u
+	on r.id = u.id
+		left outer join movie m
+		on r.movieIdx = m.movieIdx
+	order by r.reviewIdx
+
+--ºä Á¶È¸
+select * from selectAll
+
+--ºä »èÁ¦
+drop view selectAll
+
+----------------------------------------------------------------------------------------
+
+--½ÃÄö½º »ı¼º
+create sequence seq_reviewIdx
+
+--½ÃÄö½º Àû¿ë
+insert into review(reviewIdx) values(seq_reviewIdx.nextVal)
+-- ex)
+insert into review values(seq_reviewIdx.nextVal,1,'ÃÖ±Ô¹ü',sysdate,'½É±İÀ» ¿ï¸®´Â ¿µÈ­..')
+
+
+
+
+
+
+
+
+
+
 
