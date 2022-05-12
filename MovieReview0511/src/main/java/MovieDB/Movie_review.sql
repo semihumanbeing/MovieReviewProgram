@@ -20,11 +20,6 @@ alter table review add reviewText varchar2(100) not null;
 alter table review
 	drop constraint fk_review_id
 
-insert into review values (1,'05-11',2,'aa','굿');
-insert into review values (2,'05-11',2,'aa','굿');
-insert into review values (3,'05-11',2,'aa','굿');
-insert into review values (4,'05-11',2,'aa','굿');
-insert into review values (5,'05-11',2,'aa','굿');
 
 ----------------------------------------------------------------------------------------
 
@@ -51,13 +46,48 @@ alter table movie
 	
 insert into movie values (1,'살인의 추억');
 insert into movie values (2,'1987');
-insert into movie values (3,'범죄도시');
-insert into movie values (4,'범죄와의전쟁');
-insert into movie values (5,'아메리칸 싸이코');
-insert into movie values (6,'폭력의 역사');
+
 	
 
 select * from review
 select * from users
 select * from movie
+
+drop table movie
+
+
+----------------------------------------------------------------------------------------
+create or replace view selectAll
+as
+select r.id reviewId , r.movieIdx remoIdx, u.id userId , m.movieIdx moIdx , m.movieTitle 
+from review r
+	left outer join users u
+	on r.id = u.id
+		left outer join movie m
+		on r.movieIdx = m.movieIdx
+
+		
+insert into users values ('aa','aa');
+insert into users values ('bb','bb');
+
+
+
+select * from selectAll
+
+drop view selectAll
+
+
+
+--�����߰� �Խù���ȣ
+
+
+
+
+
+
+
+
+
+
+
 
