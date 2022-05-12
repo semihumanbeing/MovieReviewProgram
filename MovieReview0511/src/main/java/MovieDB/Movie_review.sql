@@ -20,11 +20,6 @@ alter table review add reviewText varchar2(100) not null;
 alter table review
 	drop constraint fk_review_id
 
-insert into review values (1,'05-11',2,'aa','±Â');
-insert into review values (2,'05-11',2,'aa','±Â');
-insert into review values (3,'05-11',2,'aa','±Â');
-insert into review values (4,'05-11',2,'aa','±Â');
-insert into review values (5,'05-11',2,'aa','±Â');
 
 ----------------------------------------------------------------------------------------
 
@@ -49,12 +44,9 @@ create table movie
 alter table movie
 	add constraint pk_movie_movieIdx primary key (movieIdx);
 	
-insert into movie values (1,'»ìÀÎÀÇ Ãß¾ï');
+insert into movie values (1,'ì‚´ì¸ì˜ ì¶”ì–µ');
 insert into movie values (2,'1987');
-insert into movie values (3,'¹üÁËµµ½Ã');
-insert into movie values (4,'¹üÁË¿ÍÀÇÀüÀï');
-insert into movie values (5,'¾Æ¸Ş¸®Ä­ ½ÎÀÌÄÚ');
-insert into movie values (6,'Æø·ÂÀÇ ¿ª»ç');
+
 	
 
 select * from review
@@ -86,7 +78,7 @@ drop view selectAll
 
 
 
---½ÃÄö½ºÃß°¡ °Ô½Ã¹°¹øÈ£
+--ï¿½ï¿½ï¿½ï¿½ï¿½ß°ï¿½ ï¿½Ô½Ã¹ï¿½ï¿½ï¿½È£
 
 
 
