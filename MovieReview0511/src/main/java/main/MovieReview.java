@@ -91,21 +91,21 @@ public class MovieReview {
 		select = scanner.nextInt();
 		
 		if(select == 1) {
-			updateReview();
+			updateMyReview();
 		} else if (select ==2) {
-			deleteReview();
+			deleteMyReview();
 		} else if (select ==3) {
 			return;
 		}
 		
 	}
 
-	private void deleteReview() { // TODO: 만들기
+	private void deleteMyReview() { // TODO: 만들기
 		System.out.println("삭제할 리뷰 번호 선택");
 		mainpage();
 	}
 
-	private void updateReview() { // TODO: 만들기
+	private void updateMyReview() { // TODO: 만들기
 		System.out.println("수정할 리뷰 번호 선택");
 		
 	}
