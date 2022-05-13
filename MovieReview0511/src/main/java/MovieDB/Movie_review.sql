@@ -82,7 +82,7 @@ from review r
 		on r.movieIdx = m.movieIdx
 	order by r.reviewIdx
 
---뷰 조회
+--left outer join 조회 -> users, movie, review
 select * from selectAll
 
 --뷰 삭제
@@ -97,14 +97,3 @@ create sequence seq_reviewIdx
 insert into review(reviewIdx) values(seq_reviewIdx.nextVal)
 -- ex)
 insert into review values(seq_reviewIdx.nextVal,1,'최규범',sysdate,'심금을 울리는 영화..')
-
-
-
-
-
-
-
-
-
-
-

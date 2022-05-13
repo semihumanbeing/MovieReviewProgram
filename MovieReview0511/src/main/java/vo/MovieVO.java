@@ -2,7 +2,7 @@ package vo;
 
 public class MovieVO {
 	
-	int movieIdx;
+	int    movieIdx;
 	String movieTitle;
 	
 	public int getMovieIdx() {
