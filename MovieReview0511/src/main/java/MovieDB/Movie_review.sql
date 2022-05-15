@@ -40,6 +40,8 @@ alter table users
 	add constraint pk_users_id primary key (id);
 	
 drop table users
+
+insert into users values('최규범', '1234');
 	
 ----------------------------------------------------------------------------------------
 
@@ -87,6 +89,7 @@ select * from selectAll
 
 --뷰 삭제
 drop view selectAll
+
 
 ----------------------------------------------------------------------------------------
 
