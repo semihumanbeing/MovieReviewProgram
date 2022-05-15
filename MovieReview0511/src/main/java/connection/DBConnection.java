@@ -33,9 +33,9 @@ public class DBConnection {
 	
 	public Connection getConnection() throws SQLException{
 		// connection 얻어오기
-		String url = ""; //TODO: DB에서 정보 가져오기
-		String user = ""; //TODO: 
-		String pwd = ""; //TODO: 
+		String url = "jdbc:oracle:thin:@localhost:1521:xe"; 
+		String user = "test"; 
+		String pwd = "test"; 
 		
 		Connection connection = DriverManager.getConnection(url,user,pwd);
 		return connection;
