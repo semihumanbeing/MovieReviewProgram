@@ -2,11 +2,13 @@ package MovieDao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import connection.DBConnection;
 import vo.ReviewVO;
-import vo.UserVO;
 
 public class ReviewDao {
 
@@ -53,8 +55,7 @@ public class ReviewDao {
 			}
 		}
 		return rs;
-
-	}
+	}//updateReivew() end
 	
 	public int DeleteReview(ReviewVO vo) { 
 		Connection connection = null;
@@ -83,6 +84,90 @@ public class ReviewDao {
 			}
 		}
 		return rs;
+	}//deleteReview() end
+	
+	//TODO : ¿¸√º∏Æ∫‰¡∂»∏(±Ë¥Ÿ¡§)
+	public List<ReviewVO> select_Review_All() {
 
-	}
+		List<ReviewVO> list = new ArrayList<ReviewVO>();
+
+		Connection        conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet         rs = null;
+		String sql = "select * from review order by reviewIdx";
+
+		try {
+			conn  = DBConnection.getInstance().getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs    = pstmt.executeQuery();
+
+			while (rs.next()) {
+				
+				int    reviewIdx  = rs.getInt("reviewIdx");
+				int    movieIdx   = rs.getInt("movieIdx");
+				String id         = rs.getString("id");
+				String reviewDate = rs.getString("reviewDate");
+				String revewText  = rs.getString("reviewText");
+				
+				ReviewVO vo = new ReviewVO();
+				
+				vo.setReviewIdx(reviewIdx);
+				vo.setMovieIdx(movieIdx);
+				vo.setId(id);
+				vo.setReviewDate(reviewDate);
+				vo.setReviewText(revewText);
+				
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}//select_Riveew_All() end
+
+	
+	//TODO : ∏Æ∫‰¿€º∫(±Ë¥Ÿ¡§)
+	public int insert_review(ReviewVO vo) {
+			
+		int res = 0;
+		
+		Connection 		  conn  = null;
+		PreparedStatement pstmt = null;
+		
+		String sql = "insert into review values(seq_reviewIdx.nextVal, ?, ?, ?, ?)";
+		
+		try {
+			conn  = DBConnection.getInstance().getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, vo.getMovieIdx());
+			pstmt.setString(2, vo.getId());
+			pstmt.setString(3, vo.getReviewDate());
+			pstmt.setString(4, vo.getReviewText());
+			
+			res = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt!=null) pstmt.close(); 
+				if(conn !=null) conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return res;
+	}//insert_review() end
 }	 
