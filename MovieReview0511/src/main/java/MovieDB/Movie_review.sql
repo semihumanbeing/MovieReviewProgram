@@ -33,6 +33,8 @@ insert into review values(seq_reviewIdx.nextVal, 2, '박길동', '2022-05-14', '심�
 --테이블 지우기
 drop table review
 
+select * from REVIEW
+
 ----------------------------------------------------------------------------------------
 
 create table users
@@ -54,6 +56,7 @@ insert into users values('박길동', '1234');
 insert into users values('육길동', '1234');	
 insert into users values('오동동', '1234');	
 
+select * from users
 	
 ----------------------------------------------------------------------------------------
 
@@ -102,7 +105,6 @@ select * from selectAll
 --뷰 삭제
 drop view selectAll
 
-
 ----------------------------------------------------------------------------------------
 
 --시퀀스 생성
@@ -113,6 +115,5 @@ insert into review(reviewIdx) values(seq_reviewIdx.nextVal)
 -- ex)
 insert into review values(seq_reviewIdx.nextVal,1,'최규범',sysdate,'심금을 울리는 영화..')
 
---(김다정) : sysdate로 reviewDate 값을 주게되면, JDBC에서 받아올 때 날짜형->문자형 변환해야합니다. 확인 부탁드립니다.
---         review Table 샘플데이터는 String형으로 추가해뒀습니다. 
+insert into review values(seq_reviewIdx.nextVal, 3, 'as', to_char(sysdate, 'YYYY-MM-DD'), 'ㅋ')
 

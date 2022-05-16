@@ -29,7 +29,7 @@ public class ReviewDao {
 		Connection connection = null;
 		PreparedStatement pstmt = null;
 		int rs = 0;
-		String sql = "update reveiw set reviewText='?' where reviewIdx = select";
+		String sql = "update review set reviewText=? where reviewIdx = ?";
 
 		try {
 			connection = DBConnection.getInstance().getConnection();
@@ -39,9 +39,6 @@ public class ReviewDao {
 			pstmt.setString(2, vo.getReviewText());
 						
 			rs = pstmt.executeUpdate();
-			
-			
-
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -58,10 +55,10 @@ public class ReviewDao {
 	}//updateReivew() end
 	
 	public int DeleteReview(ReviewVO vo) { 
-		Connection connection = null;
-		PreparedStatement pstmt = null;
+		Connection        connection = null;
+		PreparedStatement pstmt      = null;
 		int rs = 0;
-		String sql = "delete reveiw where select = reviewIdx";
+		String sql = "delete from review where reviewIdx = ? ";
 
 		try {
 			connection = DBConnection.getInstance().getConnection();
@@ -91,10 +88,10 @@ public class ReviewDao {
 
 		List<ReviewVO> list = new ArrayList<ReviewVO>();
 
-		Connection        conn = null;
+		Connection        conn  = null;
 		PreparedStatement pstmt = null;
-		ResultSet         rs = null;
-		String sql = "select * from review order by reviewIdx";
+		ResultSet         rs    = null;
+		String sql = "select * from review order by reviewIdx desc";
 
 		try {
 			conn  = DBConnection.getInstance().getConnection();
@@ -105,6 +102,7 @@ public class ReviewDao {
 				
 				int    reviewIdx  = rs.getInt("reviewIdx");
 				int    movieIdx   = rs.getInt("movieIdx");
+				//String movieTitle = rs.getString(movieIdx);
 				String id         = rs.getString("id");
 				String reviewDate = rs.getString("reviewDate");
 				String revewText  = rs.getString("reviewText");
@@ -145,7 +143,7 @@ public class ReviewDao {
 		Connection 		  conn  = null;
 		PreparedStatement pstmt = null;
 		
-		String sql = "insert into review values(seq_reviewIdx.nextVal, ?, ?, ?, ?)";
+		String sql = "insert into review values(seq_reviewIdx.nextVal, ?, ?, to_char(sysdate, 'YYYY-MM-DD'), ?)";
 		
 		try {
 			conn  = DBConnection.getInstance().getConnection();
@@ -153,8 +151,8 @@ public class ReviewDao {
 			
 			pstmt.setInt(1, vo.getMovieIdx());
 			pstmt.setString(2, vo.getId());
-			pstmt.setString(3, vo.getReviewDate());
-			pstmt.setString(4, vo.getReviewText());
+			//pstmt.setString(3, vo.getReviewDate());
+			pstmt.setString(3, vo.getReviewText());
 			
 			res = pstmt.executeUpdate();
 			

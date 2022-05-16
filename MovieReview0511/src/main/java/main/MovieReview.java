@@ -116,7 +116,14 @@ public class MovieReview {
 					mainpage();
 				} else {
 					System.out.println("일치하는 계정이 없습니다.");
-					login();
+					
+					System.out.println("1. 돌아가기");
+					select = scanner.nextInt();
+					
+					if(select == 1) {
+						login();
+					}
+					
 				}
 			}
 		} catch (Exception e) {
@@ -167,7 +174,7 @@ public class MovieReview {
 		} else if (select == 2) {
 			selectReview();
 		} else if (select == 3) {
-			return;
+			mainpage();
 		}
 	}//selectMovies() end
 
@@ -180,24 +187,36 @@ public class MovieReview {
 			System.out.printf("[%d - %d - %s - %s - %s]\n", vo.getReviewIdx(), vo.getMovieIdx(),
 															vo.getId(), vo.getReviewDate(), vo.getReviewText());
 		}
-		System.out.println();
-	}//selectReview() end
 
-	
-	
-	private void insertReview() { // TODO: 리뷰작성(김다정)
+		System.out.println("1. 리뷰작성");
+		System.out.println("2. 돌아가기");
 		
-		System.out.println("[영화번호, 아이디, 작성일자(YYYY-MM-DD), 리뷰] 입력하세요>>");
-		int    movieIdx   = scanner.nextInt();
-		String id         = scanner.next();
-		String reviewDate = scanner.next();
+		select = scanner.nextInt();
+		
+		if(select == 1) {
+			insertReview();
+		} else if (select == 2) {
+			mainpage();
+		}
+		
+	}//selectReview() end
+	
+	
+	
+	private void insertReview() { // TODO: 리뷰작성(김다정) -> 영화제목까지 보이게 하기 movieTitle
+		
+		System.out.println("영화번호 선택>>");
+		int movieIdx = scanner.nextInt();
+		
+		String id = loginInfo;
+		
+		System.out.println("[리뷰] 입력하세요>>");
 		String reviewText = scanner.next();
 		
 		ReviewVO vo  = new ReviewVO();
-		
+
 		vo.setMovieIdx(movieIdx);
 		vo.setId(id);
-		vo.setReviewDate(reviewDate);
 		vo.setReviewText(reviewText);
 		
 		int res = ReviewDao.getInstance().insert_review(vo);
@@ -205,43 +224,66 @@ public class MovieReview {
 		System.out.printf("[%s]님 리뷰등록이 완료되었습니다.\n", id);
 		System.out.println("----------[Reviews]----------");
 		selectReview();
+		mainpage();
 	}//insertReivew() end
 
 	
 	
-	private void showMyReviews() { // TODO: 내가 쓴 리뷰 선택하기입니다. 만들기
+	private void showMyReviews() { // TODO: 내 리뷰확인하기 넣기(최규범)
+		
+		
+		//규범님 확인
+		reviewList = ReviewDao.getInstance().select_Review_All();
+		
+		for(ReviewVO vo : reviewList) {
+			System.out.printf("[%d - %d - %s - %s - %s]\n", vo.getReviewIdx(), vo.getMovieIdx(),
+															vo.getId(), vo.getReviewDate(), vo.getReviewText());
+		}
+		System.out.println();
+		
+		
 		System.out.println("showMyReviews");
+		
 		System.out.println("1. 수정하기");
 		System.out.println("2. 삭제하기");
 		System.out.println("3. 돌아가기");
+		
 		select = scanner.nextInt();
-
+		
 		if (select == 1) {
 			updateMyReview();
 		} else if (select == 2) {
 			deleteMyReview();
 		} else if (select == 3) {
-			return;
+			mainpage();
 		}
 
 	}
 
-	private void deleteMyReview() { // TODO: 최규범
+	private void deleteMyReview() { // TODO: 최규범 삭제 전, 해당 id의 리뷰목록 조회
 		System.out.println("삭제할 리뷰 번호 선택");
+		int deleteReview = scanner.nextInt();
+		
+		System.out.println("정말 삭제하시겠습니까?\n1.리뷰삭제\n2.돌아가기\n");
+		
 		select = scanner.nextInt();
 		
-		System.out.println("정말 삭제하시겠습니까?\n1.예약취소\n2.돌아가기\n");
 		if (select == 1) {
-			ReviewVO vo = new ReviewVO(reviewIdx);
+			ReviewVO vo = new ReviewVO(deleteReview);
 			ReviewDao.getInstance().DeleteReview(vo);
-			System.out.println("삭제가 완료되었습니다. 감사합니다.");
+			System.out.println("------------------------------------");
+			System.out.print("삭제가 완료되었습니다. 감사합니다.");
+			
+			//TODO : 삭제 후 전체리뷰조회
+			
+			mainpage();
+			
 		} else if (select == 2) {
-			return;
+			mainpage();
 		}
-		
-	}
+	}//deleteMyReview() end
 
-	private void updateMyReview() { // TODO: 최규범
+	private void updateMyReview() { // TODO: 최규범 수정 전, 해당 id의 리뷰목록 조회
 		System.out.println("수정할 리뷰 번호 선택");
 		select = scanner.nextInt();
 		
@@ -254,18 +296,16 @@ public class MovieReview {
 		int suIdx = scanner.nextInt();
 		
 		if(suIdx == 1) {
-			ReviewVO vo = new ReviewVO(reviewIdx);
+			ReviewVO vo = new ReviewVO();
 			ReviewDao.getInstance().updateReview(vo);
 			System.out.println("수정이 완료되었습니다. 감사합니다.");
+			//TODO : 수정완료 후 전체리뷰조회
+			mainpage();
 		}else if (suIdx == 2) {
-			return;
+			mainpage();
 		}
 		
-		
-		
-		
-		
-	}
+	}//updateMyReview() end
 
 	public static void main(String[] args) {
 		try {
@@ -274,6 +314,6 @@ public class MovieReview {
 			System.out.println("잘못된 입력입니다.");
 			new MovieReview();
 		}
-	}
+	}//main end
 
 }

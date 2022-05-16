@@ -7,7 +7,13 @@ public class ReviewVO {
 	String reviewDate;
 	String reviewText;
 	
+	public ReviewVO() {
 	
+	}
+	
+	public ReviewVO(int deleteReview) {
+		this.reviewIdx = deleteReview;
+	}
 	public int getReviewIdx() {
 		return reviewIdx;
 	}
