@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import MovieDao.ReviewDao;
 import MovieDao.UserDao;
+import vo.ReviewVO;
 import vo.UserVO;
 
 public class MovieReview {
@@ -151,7 +153,7 @@ public class MovieReview {
 	}
 
 	private void selectReview() { // TODO: 전체리뷰 선택하기입니다. 만들기
-
+		
 	}
 
 	private void insertReview() { // TODO: 만들기
@@ -177,14 +179,45 @@ public class MovieReview {
 
 	}
 
-	private void deleteMyReview() { // TODO: 만들기
+	private void deleteMyReview() { // TODO: 최규범
 		System.out.println("삭제할 리뷰 번호 선택");
-		mainpage();
+		select = scanner.nextInt();
+		
+		System.out.println("정말 삭제하시겠습니까?\n1.예약취소\n2.돌아가기\n");
+		if (select == 1) {
+			ReviewVO vo = new ReviewVO(reviewIdx);
+			ReviewDao.getInstance().DeleteReview(vo);
+			System.out.println("삭제가 완료되었습니다. 감사합니다.");
+		} else if (select == 2) {
+			return;
+		}
+		
 	}
 
-	private void updateMyReview() { // TODO: 만들기
+	private void updateMyReview() { // TODO: 최규범
 		System.out.println("수정할 리뷰 번호 선택");
-
+		select = scanner.nextInt();
+		
+		System.out.println("수정할 내용을 입력해주세요.");
+		String text = scanner.next();
+		
+		System.out.println(text);
+		System.out.println("수정 하시겠습니까?[1.완료 2.취소]");
+		
+		int suIdx = scanner.nextInt();
+		
+		if(suIdx == 1) {
+			ReviewVO vo = new ReviewVO(reviewIdx);
+			ReviewDao.getInstance().updateReview(vo);
+			System.out.println("수정이 완료되었습니다. 감사합니다.");
+		}else if (suIdx == 2) {
+			return;
+		}
+		
+		
+		
+		
+		
 	}
 
 	public static void main(String[] args) {
