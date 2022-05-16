@@ -11,4 +11,6 @@
     <fullyQualifiedTypeName name="vo.UserVO"/>
     <fullyQualifiedTypeName name="MovieDao.UserDao"/>
     <fullyQualifiedTypeName name="main.MovieReview"/>
+    <fullyQualifiedTypeName name="vo.ReviewVO"/>
+    <fullyQualifiedTypeName name="MovieDao.ReviewDao"/>
 </qualifiedTypeNameHistroy>
