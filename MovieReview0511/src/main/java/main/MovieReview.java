@@ -4,16 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import MovieDao.MovieDao;
 import MovieDao.ReviewDao;
 import MovieDao.UserDao;
+import vo.MovieVO;
 import vo.ReviewVO;
 import vo.UserVO;
+import vo.selectAllVO;
 
 public class MovieReview {
 
 	static int select; // 선택되는 값은 따로 선언할 필요 없이 여기서 설정할 수 있습니다.
 	Scanner scanner = new Scanner(System.in);
 	String loginInfo;
+	
+	//각 VO List
+	List<MovieVO>     movieList     = new ArrayList<>();
+	List<ReviewVO>    reviewList    = new ArrayList<>();
+	List<selectAllVO> selectAllList = new ArrayList<>();
+	List<UserVO>      userList      = new ArrayList<>();
 
 	private int initDisplay() {
 		System.out.println("영화리뷰 사이트에 오신것을 환영합니다");
@@ -136,32 +145,70 @@ public class MovieReview {
 
 	}
 
-	private void selectMovies() { // TODO: 만들기
-		System.out.println("selectMovies");
-		System.out.println("영화 리스트");
-		System.out.println("1. 글쓰기");
-		System.out.println("2. 리뷰 보기");
+	
+	private void selectMovies() { // TODO: 영화선택(김다정)
+		
+		System.out.println("----------[Select Movies]----------");
+		movieList = MovieDao.getInstance().select_movie_list();
+		
+		for(MovieVO vo : movieList) {
+			System.out.printf("[%d - %s]\n", vo.getMovieIdx(), vo.getMovieTitle());
+		}
+		System.out.println(); //줄 띄우기
+		
+		System.out.println("1. 리뷰작성");
+		System.out.println("2. 리뷰보기");
 		System.out.println("3. 돌아가기");
+		
 		select = scanner.nextInt();
-		if (select == 1) {
+		
+		if(select == 1) {
 			insertReview();
 		} else if (select == 2) {
 			selectReview();
 		} else if (select == 3) {
 			return;
 		}
-	}
+	}//selectMovies() end
 
-	private void selectReview() { // TODO: 전체리뷰 선택하기입니다. 만들기
+	
+	private void selectReview() { // TODO: 전체리뷰선택(김다정)
 		
-	}
+		reviewList = ReviewDao.getInstance().select_Review_All();
+		
+		for(ReviewVO vo : reviewList) {
+			System.out.printf("[%d - %d - %s - %s - %s]\n", vo.getReviewIdx(), vo.getMovieIdx(),
+															vo.getId(), vo.getReviewDate(), vo.getReviewText());
+		}
+		System.out.println();
+	}//selectReview() end
 
-	private void insertReview() { // TODO: 만들기
-		System.out.println("입력완료... 리뷰보기");
+	
+	
+	private void insertReview() { // TODO: 리뷰작성(김다정)
+		
+		System.out.println("[영화번호, 아이디, 작성일자(YYYY-MM-DD), 리뷰] 입력하세요>>");
+		int    movieIdx   = scanner.nextInt();
+		String id         = scanner.next();
+		String reviewDate = scanner.next();
+		String reviewText = scanner.next();
+		
+		ReviewVO vo  = new ReviewVO();
+		
+		vo.setMovieIdx(movieIdx);
+		vo.setId(id);
+		vo.setReviewDate(reviewDate);
+		vo.setReviewText(reviewText);
+		
+		int res = ReviewDao.getInstance().insert_review(vo);
+		
+		System.out.printf("[%s]님 리뷰등록이 완료되었습니다.\n", id);
+		System.out.println("----------[Reviews]----------");
 		selectReview();
+	}//insertReivew() end
 
-	}
-
+	
+	
 	private void showMyReviews() { // TODO: 내가 쓴 리뷰 선택하기입니다. 만들기
 		System.out.println("showMyReviews");
 		System.out.println("1. 수정하기");

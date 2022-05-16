@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import connection.DBConnection;
+import vo.MovieVO;
 import vo.selectAllVO;
 
 public class MovieDao {
@@ -80,4 +81,52 @@ public class MovieDao {
 		}
 		return list;
 	}//selectList() end
+	
+	//TODO : 영화조회(김다정)
+	public List<MovieVO> select_movie_list(){ 
+		
+		List<MovieVO> list = new ArrayList<MovieVO>();
+		
+		Connection        conn  = null;
+		PreparedStatement pstmt = null;
+		ResultSet 	      rs    = null;
+		
+		String sql = "select * from movie";
+		
+		try {
+			conn  = DBConnection.getInstance().getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs    = pstmt.executeQuery();
+			
+			while(rs.next()) {
+			
+				int    movieIdx   = rs.getInt("movieIdx");
+				String movieTitle = rs.getString("movieTitle");
+				
+				MovieVO vo = new MovieVO();
+				
+				vo.setMovieIdx(movieIdx);
+				vo.setMovieTitle(movieTitle);
+				
+				list.add(vo);
+			}//while end
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs    != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn  != null) conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}//try-catch end
+		}
+		return list;
+	}//select_Movie_list() end
+
+	
+	
+	
+	
+	
 }
