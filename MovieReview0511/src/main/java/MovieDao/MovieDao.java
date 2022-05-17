@@ -29,8 +29,8 @@ public class MovieDao {
 	
 	}
 	
-	//selectAll_list() : 3개의 Table 전체조회
-	public List<selectAllVO> selectLAll_list(){
+	//TODO : 리뷰번호, 영화번호, 영화제목, 아이디 조회
+	public List<selectAllVO> selectL_Review_list(){
 		
 		List<selectAllVO> list = new ArrayList<selectAllVO>();
 		
@@ -48,9 +48,9 @@ public class MovieDao {
 			
 			while(rs.next()) {
 				
-				int reviewIdx     = rs.getInt("reviewIdx");
-				int remoIdx       = rs.getInt("remoIdx");
-				int moIdx         = rs.getInt("moIdx");
+				int    reviewIdx  = rs.getInt("reviewIdx");
+				int    remoIdx    = rs.getInt("remoIdx");
+				int    moIdx      = rs.getInt("moIdx");
 				String reviewId   = rs.getString("reviewId");
 				String userId     = rs.getString("userId");
 				String movieTitle = rs.getString("movieTitle");
@@ -124,9 +124,4 @@ public class MovieDao {
 		return list;
 	}//select_Movie_list() end
 
-	
-	
-	
-	
-	
 }

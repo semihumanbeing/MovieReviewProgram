@@ -9,6 +9,8 @@ import java.util.List;
 
 import connection.DBConnection;
 import vo.ReviewVO;
+import vo.selectAllVO;
+import vo.selectReviewVO;
 
 public class ReviewDao {
 
@@ -25,6 +27,7 @@ public class ReviewDao {
 		// 외부에서 생성불가 (싱글턴)
 	}
 	
+	//TODO : 리뷰수정(최규범)
 	public int updateReview(ReviewVO vo) { 
 		Connection connection = null;
 		PreparedStatement pstmt = null;
@@ -54,6 +57,8 @@ public class ReviewDao {
 		return rs;
 	}//updateReivew() end
 	
+	
+	//TODO : 리뷰삭제(최규범)
 	public int DeleteReview(ReviewVO vo) { 
 		Connection        connection = null;
 		PreparedStatement pstmt      = null;
@@ -83,57 +88,6 @@ public class ReviewDao {
 		return rs;
 	}//deleteReview() end
 	
-	//TODO : 전체리뷰조회(김다정)
-	public List<ReviewVO> select_Review_All() {
-
-		List<ReviewVO> list = new ArrayList<ReviewVO>();
-
-		Connection        conn  = null;
-		PreparedStatement pstmt = null;
-		ResultSet         rs    = null;
-		String sql = "select * from review order by reviewIdx desc";
-
-		try {
-			conn  = DBConnection.getInstance().getConnection();
-			pstmt = conn.prepareStatement(sql);
-			rs    = pstmt.executeQuery();
-
-			while (rs.next()) {
-				
-				int    reviewIdx  = rs.getInt("reviewIdx");
-				int    movieIdx   = rs.getInt("movieIdx");
-				//String movieTitle = rs.getString(movieIdx);
-				String id         = rs.getString("id");
-				String reviewDate = rs.getString("reviewDate");
-				String revewText  = rs.getString("reviewText");
-				
-				ReviewVO vo = new ReviewVO();
-				
-				vo.setReviewIdx(reviewIdx);
-				vo.setMovieIdx(movieIdx);
-				vo.setId(id);
-				vo.setReviewDate(reviewDate);
-				vo.setReviewText(revewText);
-				
-				list.add(vo);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (rs != null)
-					rs.close();
-				if (pstmt != null)
-					pstmt.close();
-				if (conn != null)
-					conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return list;
-	}//select_Riveew_All() end
-
 	
 	//TODO : 리뷰작성(김다정)
 	public int insert_review(ReviewVO vo) {
@@ -168,4 +122,109 @@ public class ReviewDao {
 		}
 		return res;
 	}//insert_review() end
+	
+	
+	//TODO : 리뷰조회 영화제목 추가 (김다정)
+	public List<selectReviewVO> select_Review_List() {
+
+		List<selectReviewVO> list = new ArrayList<selectReviewVO>();
+
+		Connection        conn  = null;
+		PreparedStatement pstmt = null;
+		ResultSet         rs    = null;
+		
+		String sql = "select * from selectReview order by reviewIdx desc";
+
+		try {
+			conn  = DBConnection.getInstance().getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs    = pstmt.executeQuery();
+
+			while (rs.next()) {
+				
+				int    reviewIdx  = rs.getInt("reviewIdx");
+				int    movieIdx   = rs.getInt("movieIdx");
+				String movieTitle = rs.getString("movieTitle");
+				String id         = rs.getString("id");
+				String reviewText = rs.getString("reviewText");
+				String reviewDate = rs.getString("reviewDate");
+				
+				selectReviewVO vo = new selectReviewVO();
+
+				vo.setReviewIdx(reviewIdx);
+				vo.setMoviewIdx(movieIdx);
+				vo.setMovieTitle(movieTitle);
+				vo.setUserId(id);
+				vo.setReviewText(reviewText);
+				vo.setReviewDate(reviewDate);
+				
+				list.add(vo);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)    rs.close(); 
+				if (pstmt != null) pstmt.close(); 
+				if (conn != null)  conn.close(); 
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}//select_Review_List() end
+
+	
+	
+	//TODO : 내 리뷰보여주기(김다정)
+	public List<selectReviewVO> showMyReview(selectReviewVO vo) {
+
+		List<selectReviewVO> list = new ArrayList<selectReviewVO>();
+		
+		Connection        conn  = null;
+		PreparedStatement pstmt = null;
+		ResultSet         rs    = null;
+		String sql = "select * from selectReview where id = ?";
+		
+		try {
+			conn  = DBConnection.getInstance().getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, vo.getUserId());
+			
+			rs    = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				
+				int    reviewIdx  = rs.getInt("reviewIdx");
+				int    movieIdx   = rs.getInt("movieIdx");
+				String movieTitle = rs.getString("movieTitle");
+				String reviewText = rs.getString("reviewText");
+				String reviewDate = rs.getString("reviewDate");
+				
+				vo.setReviewIdx(reviewIdx);
+				vo.setMoviewIdx(movieIdx);
+				vo.setMovieTitle(movieTitle);
+				vo.setReviewText(reviewText);
+				vo.setReviewDate(reviewDate);
+				
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)    rs.close();
+				if (pstmt != null) pstmt.close();
+				if (conn != null)  conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}//showMyReview() end
+
+	
+	
 }	 

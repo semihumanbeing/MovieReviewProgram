@@ -7,10 +7,13 @@
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="connection.DBConnection"/>
     <fullyQualifiedTypeName name="vo.UserVO"/>
     <fullyQualifiedTypeName name="MovieDao.UserDao"/>
     <fullyQualifiedTypeName name="main.MovieReview"/>
     <fullyQualifiedTypeName name="vo.ReviewVO"/>
+    <fullyQualifiedTypeName name="vo.selectAllVO"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="MovieDao.ReviewDao"/>
+    <fullyQualifiedTypeName name="connection.DBConnection"/>
+    <fullyQualifiedTypeName name="vo.selectReviewVO"/>
 </qualifiedTypeNameHistroy>

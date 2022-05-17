@@ -3231,3 +3231,1159 @@ java.lang.Error: SWT Resource was not properly disposed
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+!SESSION 2022-05-16 20:59:24.571 -----------------------------------------------
+eclipse.buildId=4.19.0.I20210303-1800
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2022-05-16 20:59:39.687
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-16 20:59:39.687
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@135f160e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@230e163b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui 4 4 2022-05-16 20:59:47.916
+!MESSAGE Unable to create part
+!STACK 1
+org.eclipse.ui.PartInitException: Cannot determine URI for '/MovieReview0511/src/main/java/main/MovieReview.java'.
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3203)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:3214)
+	at org.eclipse.ui.internal.EditorReference.initialize(EditorReference.java:353)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:344)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:999)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:964)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:405)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:332)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:202)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:999)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1209)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:114)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:528)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:73)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:999)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:114)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:64)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:666)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1083)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+Caused by: org.eclipse.core.runtime.CoreException: Cannot determine URI for '/MovieReview0511/src/main/java/main/MovieReview.java'.
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.create(ResourceFileBuffer.java:239)
+	at org.eclipse.core.internal.filebuffers.TextFileBufferManager.connect(TextFileBufferManager.java:115)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileInfo(TextFileDocumentProvider.java:563)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.createFileInfo(CompilationUnitDocumentProvider.java:1018)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.connect(TextFileDocumentProvider.java:481)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.connect(CompilationUnitDocumentProvider.java:1284)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSetInput(AbstractTextEditor.java:4182)
+	at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput(StatusTextEditor.java:262)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.doSetInput(AbstractDecoratedTextEditor.java:1479)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.internalDoSetInput(JavaEditor.java:2544)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.doSetInput(JavaEditor.java:2517)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSetInput(CompilationUnitEditor.java:1410)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.lambda$1(AbstractTextEditor.java:3172)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2290)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3189)
+	... 114 more
+!SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2022-05-16 20:59:47.920
+!MESSAGE Cannot determine URI for '/MovieReview0511/src/main/java/main/MovieReview.java'.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Cannot determine URI for '/MovieReview0511/src/main/java/main/MovieReview.java'.
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.create(ResourceFileBuffer.java:239)
+	at org.eclipse.core.internal.filebuffers.TextFileBufferManager.connect(TextFileBufferManager.java:115)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileInfo(TextFileDocumentProvider.java:563)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.createFileInfo(CompilationUnitDocumentProvider.java:1018)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.connect(TextFileDocumentProvider.java:481)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.connect(CompilationUnitDocumentProvider.java:1284)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSetInput(AbstractTextEditor.java:4182)
+	at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput(StatusTextEditor.java:262)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.doSetInput(AbstractDecoratedTextEditor.java:1479)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.internalDoSetInput(JavaEditor.java:2544)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.doSetInput(JavaEditor.java:2517)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSetInput(CompilationUnitEditor.java:1410)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.lambda$1(AbstractTextEditor.java:3172)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2290)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3189)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:3214)
+	at org.eclipse.ui.internal.EditorReference.initialize(EditorReference.java:353)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:344)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:999)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:964)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:405)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:332)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:202)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:999)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1209)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:114)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:528)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:73)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:999)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:114)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:64)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:150)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:666)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1083)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+!SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2022-05-16 20:59:47.926
+!MESSAGE Cannot determine URI for '/MovieReview0511/src/main/java/main/MovieReview.java'.
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-05-16 20:59:55.162
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-05-16 20:59:55.162
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-05-16 20:59:55.476
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\kdjku'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui.ide 4 4 2022-05-16 21:00:04.267
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:165)
+	at org.eclipse.swt.graphics.Image.win32_new(Image.java:2163)
+	at org.eclipse.swt.widgets.TaskBar.createShellLink(TaskBar.java:168)
+	at org.eclipse.swt.widgets.TaskBar.createShellLinkArray(TaskBar.java:208)
+	at org.eclipse.swt.widgets.TaskBar.setMenu(TaskBar.java:382)
+	at org.eclipse.swt.widgets.TaskItem.setMenu(TaskItem.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.mylyn.commons.workbench.TaskBarManager$TaskBarMenuManager.setMenuOnTaskItem(TaskBarManager.java:121)
+	at org.eclipse.mylyn.commons.workbench.TaskBarManager$TaskBarMenuManager.update(TaskBarManager.java:112)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:673)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.addSystemTaskBarActions(TasksUiPlugin.java:479)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.access$7(TasksUiPlugin.java:458)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin$TasksUiInitializationJob.runInUIThread(TasksUiPlugin.java:394)
+	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.ui.ide 4 4 2022-05-16 21:00:04.269
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:165)
+	at org.eclipse.swt.graphics.Image.win32_new(Image.java:2163)
+	at org.eclipse.swt.widgets.TaskBar.createShellLink(TaskBar.java:168)
+	at org.eclipse.swt.widgets.TaskBar.createShellLinkArray(TaskBar.java:208)
+	at org.eclipse.swt.widgets.TaskBar.setMenu(TaskBar.java:382)
+	at org.eclipse.swt.widgets.TaskItem.setMenu(TaskItem.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.mylyn.commons.workbench.TaskBarManager$TaskBarMenuManager.setMenuOnTaskItem(TaskBarManager.java:121)
+	at org.eclipse.mylyn.commons.workbench.TaskBarManager$TaskBarMenuManager.update(TaskBarManager.java:112)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:673)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.addSystemTaskBarActions(TasksUiPlugin.java:479)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.access$7(TasksUiPlugin.java:458)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin$TasksUiInitializationJob.runInUIThread(TasksUiPlugin.java:394)
+	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2022-05-16 21:09:41.873
+!MESSAGE Error creating JDBC Connection connection to Oracle_test. (Error: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+The Connection descriptor used by the client was:
+localhost:1521:xe
+)
+!STACK 0
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+The Connection descriptor used by the client was:
+localhost:1521:xe
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:261)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:387)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2022-05-16 21:09:44.149
+!MESSAGE Error creating SQL Model Connection connection to Oracle_test. (Error: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+The Connection descriptor used by the client was:
+localhost:1521:xe
+)
+!STACK 0
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+The Connection descriptor used by the client was:
+localhost:1521:xe
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:261)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:387)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 4 -1 2022-05-16 21:09:44.218
+!MESSAGE Could not connect to Oracle_test.
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2022-05-16 21:09:44.218
+!MESSAGE Error creating SQL Model Connection connection to Oracle_test. (Error: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+The Connection descriptor used by the client was:
+localhost:1521:xe
+)
+!STACK 0
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+The Connection descriptor used by the client was:
+localhost:1521:xe
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:261)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:387)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2022-05-16 21:09:44.219
+!MESSAGE Error creating JDBC Connection connection to Oracle_test. (Error: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+The Connection descriptor used by the client was:
+localhost:1521:xe
+)
+!STACK 0
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+The Connection descriptor used by the client was:
+localhost:1521:xe
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:261)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:387)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2022-05-16 21:30:48.209
+!MESSAGE Error creating JDBC Connection connection to test. (Error: ORA-01017: invalid username/password; logon denied
+)
+!STACK 0
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:331)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:283)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:278)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.receiveOauth(T4CTTIoauthenticate.java:785)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:362)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2022-05-16 21:30:50.479
+!MESSAGE Error creating SQL Model Connection connection to test. (Error: ORA-01017: invalid username/password; logon denied
+)
+!STACK 0
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:331)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:283)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:278)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.receiveOauth(T4CTTIoauthenticate.java:785)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:362)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 4 -1 2022-05-16 21:30:50.494
+!MESSAGE Could not connect to test.
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2022-05-16 21:30:50.494
+!MESSAGE Error creating SQL Model Connection connection to test. (Error: ORA-01017: invalid username/password; logon denied
+)
+!STACK 0
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:331)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:283)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:278)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.receiveOauth(T4CTTIoauthenticate.java:785)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:362)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2022-05-16 21:30:50.495
+!MESSAGE Error creating JDBC Connection connection to test. (Error: ORA-01017: invalid username/password; logon denied
+)
+!STACK 0
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:331)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:283)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:278)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.receiveOauth(T4CTTIoauthenticate.java:785)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:362)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2022-05-16 21:31:24.254
+!MESSAGE Error creating SQL Model Connection connection to test. (Error: ORA-01017: invalid username/password; logon denied
+)
+!STACK 0
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:331)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:283)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:278)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.receiveOauth(T4CTTIoauthenticate.java:785)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:362)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2022-05-16 21:31:24.291
+!MESSAGE Error creating JDBC Connection connection to test. (Error: ORA-01017: invalid username/password; logon denied
+)
+!STACK 0
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:331)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:283)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:278)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.receiveOauth(T4CTTIoauthenticate.java:785)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:362)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 4 -1 2022-05-16 21:31:24.301
+!MESSAGE Could not connect to test.
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2022-05-16 21:31:24.301
+!MESSAGE Error creating SQL Model Connection connection to test. (Error: ORA-01017: invalid username/password; logon denied
+)
+!STACK 0
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:331)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:283)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:278)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.receiveOauth(T4CTTIoauthenticate.java:785)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:362)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2022-05-16 21:31:24.302
+!MESSAGE Error creating JDBC Connection connection to test. (Error: ORA-01017: invalid username/password; logon denied
+)
+!STACK 0
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:331)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:283)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:278)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.receiveOauth(T4CTTIoauthenticate.java:785)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:362)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2022-05-17 00:12:23.932
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [showMyReview() {key=LMovieDao/ReviewDao;.showMyReview()Ljava/util/List<Lvo/selectReviewVO;>;} [in ReviewDao [in [Working copy] ReviewDao.java [in MovieDao [in src/main/java [in MovieReview0511]]]]] does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:573)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:616)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:326)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:312)
+	at org.eclipse.jdt.internal.core.Member.getFlags(Member.java:172)
+	at org.eclipse.jdt.internal.corext.util.JdtFlags.isPrivate(JdtFlags.java:157)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaElementHyperlinkSuperImplementationDetector.isOverriddenMethod(JavaElementHyperlinkSuperImplementationDetector.java:57)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaElementHyperlinkSuperImplementationDetector.addHyperlinks(JavaElementHyperlinkSuperImplementationDetector.java:44)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaElementHyperlinkDetector.detectHyperlinks(JavaElementHyperlinkDetector.java:128)
+	at org.eclipse.ui.texteditor.HyperlinkDetectorRegistry$HyperlinkDetectorDelegate.detectHyperlinks(HyperlinkDetectorRegistry.java:81)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:289)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:262)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.mouseMove(HyperlinkManager.java:457)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:216)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1043)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4026)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2022-05-17 00:12:23.932
+!MESSAGE showMyReview() {key=LMovieDao/ReviewDao;.showMyReview()Ljava/util/List<Lvo/selectReviewVO;>;} [in ReviewDao [in [Working copy] ReviewDao.java [in MovieDao [in src/main/java [in MovieReview0511]]]]] does not exist
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2022-05-17 00:12:23.943
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [showMyReview() {key=LMovieDao/ReviewDao;.showMyReview()Ljava/util/List<Lvo/selectReviewVO;>;} [in ReviewDao [in [Working copy] ReviewDao.java [in MovieDao [in src/main/java [in MovieReview0511]]]]] does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:573)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:616)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:326)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:312)
+	at org.eclipse.jdt.internal.core.SourceMethod.getReturnType(SourceMethod.java:204)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaElementHyperlinkReturnTypeDetector.addHyperlinks(JavaElementHyperlinkReturnTypeDetector.java:43)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaElementHyperlinkDetector.detectHyperlinks(JavaElementHyperlinkDetector.java:128)
+	at org.eclipse.ui.texteditor.HyperlinkDetectorRegistry$HyperlinkDetectorDelegate.detectHyperlinks(HyperlinkDetectorRegistry.java:81)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:289)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:262)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.mouseMove(HyperlinkManager.java:457)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:216)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1043)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4026)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2022-05-17 00:12:23.943
+!MESSAGE showMyReview() {key=LMovieDao/ReviewDao;.showMyReview()Ljava/util/List<Lvo/selectReviewVO;>;} [in ReviewDao [in [Working copy] ReviewDao.java [in MovieDao [in src/main/java [in MovieReview0511]]]]] does not exist
+!SESSION 2022-05-17 01:05:34.512 -----------------------------------------------
+eclipse.buildId=4.19.0.I20210303-1800
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2022-05-17 01:05:59.063
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-17 01:05:59.063
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@773cc551,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5cbaafbd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-05-17 01:06:26.895
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\kdjku'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui.ide 4 4 2022-05-17 01:06:30.124
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:165)
+	at org.eclipse.swt.graphics.Image.win32_new(Image.java:2163)
+	at org.eclipse.swt.widgets.TaskBar.createShellLink(TaskBar.java:168)
+	at org.eclipse.swt.widgets.TaskBar.createShellLinkArray(TaskBar.java:208)
+	at org.eclipse.swt.widgets.TaskBar.setMenu(TaskBar.java:382)
+	at org.eclipse.swt.widgets.TaskItem.setMenu(TaskItem.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.mylyn.commons.workbench.TaskBarManager$TaskBarMenuManager.setMenuOnTaskItem(TaskBarManager.java:121)
+	at org.eclipse.mylyn.commons.workbench.TaskBarManager$TaskBarMenuManager.update(TaskBarManager.java:112)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:673)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.addSystemTaskBarActions(TasksUiPlugin.java:479)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.access$7(TasksUiPlugin.java:458)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin$TasksUiInitializationJob.runInUIThread(TasksUiPlugin.java:394)
+	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.ui.ide 4 4 2022-05-17 01:06:30.132
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:165)
+	at org.eclipse.swt.graphics.Image.win32_new(Image.java:2163)
+	at org.eclipse.swt.widgets.TaskBar.createShellLink(TaskBar.java:168)
+	at org.eclipse.swt.widgets.TaskBar.createShellLinkArray(TaskBar.java:208)
+	at org.eclipse.swt.widgets.TaskBar.setMenu(TaskBar.java:382)
+	at org.eclipse.swt.widgets.TaskItem.setMenu(TaskItem.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.mylyn.commons.workbench.TaskBarManager$TaskBarMenuManager.setMenuOnTaskItem(TaskBarManager.java:121)
+	at org.eclipse.mylyn.commons.workbench.TaskBarManager$TaskBarMenuManager.update(TaskBarManager.java:112)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:673)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.addSystemTaskBarActions(TasksUiPlugin.java:479)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.access$7(TasksUiPlugin.java:458)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin$TasksUiInitializationJob.runInUIThread(TasksUiPlugin.java:394)
+	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-05-17 01:06:52.561
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-05-17 01:06:52.565
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+!SESSION 2022-05-17 10:53:30.619 -----------------------------------------------
+eclipse.buildId=4.19.0.I20210303-1800
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2022-05-17 10:53:54.336
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-17 10:53:54.336
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5cbaafbd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4f0f56f5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-05-17 10:54:22.536
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\kdjku'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui.ide 4 4 2022-05-17 10:54:28.658
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:165)
+	at org.eclipse.swt.graphics.Image.win32_new(Image.java:2163)
+	at org.eclipse.swt.widgets.TaskBar.createShellLink(TaskBar.java:168)
+	at org.eclipse.swt.widgets.TaskBar.createShellLinkArray(TaskBar.java:208)
+	at org.eclipse.swt.widgets.TaskBar.setMenu(TaskBar.java:382)
+	at org.eclipse.swt.widgets.TaskItem.setMenu(TaskItem.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.mylyn.commons.workbench.TaskBarManager$TaskBarMenuManager.setMenuOnTaskItem(TaskBarManager.java:121)
+	at org.eclipse.mylyn.commons.workbench.TaskBarManager$TaskBarMenuManager.update(TaskBarManager.java:112)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:673)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.addSystemTaskBarActions(TasksUiPlugin.java:479)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.access$7(TasksUiPlugin.java:458)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin$TasksUiInitializationJob.runInUIThread(TasksUiPlugin.java:394)
+	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.ui.ide 4 4 2022-05-17 10:54:28.663
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:165)
+	at org.eclipse.swt.graphics.Image.win32_new(Image.java:2163)
+	at org.eclipse.swt.widgets.TaskBar.createShellLink(TaskBar.java:168)
+	at org.eclipse.swt.widgets.TaskBar.createShellLinkArray(TaskBar.java:208)
+	at org.eclipse.swt.widgets.TaskBar.setMenu(TaskBar.java:382)
+	at org.eclipse.swt.widgets.TaskItem.setMenu(TaskItem.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.mylyn.commons.workbench.TaskBarManager$TaskBarMenuManager.setMenuOnTaskItem(TaskBarManager.java:121)
+	at org.eclipse.mylyn.commons.workbench.TaskBarManager$TaskBarMenuManager.update(TaskBarManager.java:112)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:673)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.addSystemTaskBarActions(TasksUiPlugin.java:479)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.access$7(TasksUiPlugin.java:458)
+	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin$TasksUiInitializationJob.runInUIThread(TasksUiPlugin.java:394)
+	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-05-17 10:54:42.228
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2022-05-17 10:54:42.229
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
