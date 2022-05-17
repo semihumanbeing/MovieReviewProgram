@@ -38,9 +38,9 @@ public class ReviewDao {
 			connection = DBConnection.getInstance().getConnection();
 			pstmt = connection.prepareStatement(sql);
 			
-			pstmt.setInt(1, vo.getReviewIdx());
-			pstmt.setString(2, vo.getReviewText());
-						
+			pstmt.setString(1, vo.getReviewText());
+			pstmt.setInt(2, vo.getReviewIdx());
+			
 			rs = pstmt.executeUpdate();
 
 		} catch (Exception e) {
@@ -88,6 +88,59 @@ public class ReviewDao {
 		return rs;
 	}//deleteReview() end
 	
+	public List<ReviewVO> select_Review_My(ReviewVO getReviewVO) {
+		List<ReviewVO> list = new ArrayList<ReviewVO>();
+
+		Connection        conn  = null;
+		PreparedStatement pstmt = null;
+		ResultSet         rs    = null;
+		String sql = "select * from review where id = ? order by reviewIdx desc";
+
+		try {
+			conn  = DBConnection.getInstance().getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, getReviewVO.getId());
+			pstmt.executeUpdate();
+			
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				
+				int    reviewIdx  = rs.getInt("reviewIdx");
+				int    movieIdx   = rs.getInt("movieIdx");
+				String movieTitle = rs.getString("movieTitle");
+				String id         = rs.getString("id");
+				String reviewDate = rs.getString("reviewDate");
+				String reviewText  = rs.getString("reviewText");
+				
+				ReviewVO vo = new ReviewVO();
+				
+				vo.setReviewIdx(reviewIdx);
+				vo.setMovieIdx(movieIdx);
+				vo.setMovieTitle(movieTitle);
+				vo.setId(id);
+				vo.setReviewDate(reviewDate);
+				vo.setReviewText(reviewText);
+				
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}//select_Riveew_All() end
 	
 	//TODO : 리뷰작성(김다정)
 	public int insert_review(ReviewVO vo) {
@@ -174,34 +227,93 @@ public class ReviewDao {
 		}
 		return list;
 	}//select_Review_List() end
-
 	
+	//TODO : 업데이트 내용 조회
+	public List<ReviewVO> selectUpdatedReview(ReviewVO getReviewVO) {
+		List<ReviewVO> list = new ArrayList<ReviewVO>();
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from review where id = ? and reviewIdx = ? order by reviewIdx desc";
+
+		try {
+			conn = DBConnection.getInstance().getConnection();
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, getReviewVO.getId());
+			pstmt.setInt(2, getReviewVO.getReviewIdx());
+			pstmt.executeUpdate();
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				int reviewIdx = rs.getInt("reviewIdx");
+				int movieIdx = rs.getInt("movieIdx");
+				String id = rs.getString("id");
+				String reviewDate = rs.getString("reviewDate");
+				String reviewText = rs.getString("reviewText");
+
+				ReviewVO vo = new ReviewVO();
+
+				vo.setReviewIdx(reviewIdx);
+				vo.setMovieIdx(movieIdx);
+				vo.setId(id);
+				vo.setReviewDate(reviewDate);
+				vo.setReviewText(reviewText);
+
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}// select_Riveew_All() end
 	
 	//TODO : 내 리뷰보여주기(김다정)
-	public List<selectReviewVO> showMyReview(selectReviewVO vo) {
+	public List<selectReviewVO> showMyReview(String userId) {
 
-		List<selectReviewVO> list = new ArrayList<selectReviewVO>();
+		List<selectReviewVO> list =  new ArrayList<selectReviewVO>();
 		
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
 		ResultSet         rs    = null;
-		String sql = "select * from selectReview where id = ?";
+		String sql = "select * from selectReview where id = ? order by reviewIdx desc";
+		
+		//System.out.println(sql);
+		//System.out.println(vo.getUserId());
 		
 		try {
 			conn  = DBConnection.getInstance().getConnection();
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, vo.getUserId());
+			pstmt.setString(1, userId);
 			
 			rs    = pstmt.executeQuery();
 			
 			while (rs.next()) {
+				
+				selectReviewVO vo = new selectReviewVO();
 				
 				int    reviewIdx  = rs.getInt("reviewIdx");
 				int    movieIdx   = rs.getInt("movieIdx");
 				String movieTitle = rs.getString("movieTitle");
 				String reviewText = rs.getString("reviewText");
 				String reviewDate = rs.getString("reviewDate");
+				
+				
 				
 				vo.setReviewIdx(reviewIdx);
 				vo.setMoviewIdx(movieIdx);

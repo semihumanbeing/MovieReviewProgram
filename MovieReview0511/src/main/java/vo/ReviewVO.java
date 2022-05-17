@@ -3,6 +3,7 @@ package vo;
 public class ReviewVO {
 	int reviewIdx;
 	int movieIdx;
+	String movieTitle;
 	String id;
 	String reviewDate;
 	String reviewText;
@@ -10,12 +11,26 @@ public class ReviewVO {
 	public ReviewVO() {
 	
 	}
-	
-	public ReviewVO(int deleteReview) {
-		this.reviewIdx = deleteReview;
+	public ReviewVO(int reviewIdx, String id) {
+		super();
+		this.reviewIdx = reviewIdx;
+		this.id = id;
+	}
+	public ReviewVO(int updateReview) {
+		this.reviewIdx = updateReview;
+	}
+	public ReviewVO(String loginInfo) {
+		// TODO Auto-generated constructor stub
 	}
 	public int getReviewIdx() {
 		return reviewIdx;
+	}
+	public String getMovieTitle() {
+		return movieTitle;
+	}
+
+	public void setMovieTitle(String movieTitle) {
+		this.movieTitle = movieTitle;
 	}
 	public void setReviewIdx(int reviewIdx) {
 		this.reviewIdx = reviewIdx;

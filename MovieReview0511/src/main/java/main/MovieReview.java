@@ -284,10 +284,11 @@ public class MovieReview {
 	
 	private void showMyReviews() { // TODO: 내 리뷰확인하기 넣기(최규범)
 		
-		selectReviewVO srv = new selectReviewVO(loginInfo);
-		selectReviewList   = ReviewDao.getInstance().showMyReview(srv);
+		//selectReviewVO srv = new selectReviewVO(loginInfo);
+		selectReviewList   = ReviewDao.getInstance().showMyReview(loginInfo);
 		
 		System.out.println("--------------------[My Review List]-------------------");
+		System.out.println("[리뷰번호  영화번호  영화제목  닉네임  작성내용  작성일자]");
 		for(selectReviewVO vo : selectReviewList) {
 			System.out.printf("[%d - %d - %s - %s - %s]\n", vo.getReviewIdx(), vo.getMoviewIdx(), vo.getMovieTitle(),
 														    vo.getReviewText(), vo.getReviewDate());
@@ -322,6 +323,17 @@ public class MovieReview {
 
 	
 	private void deleteMyReview() { // TODO: 최규범 삭제 전, 해당 id의 리뷰목록 조회
+		
+		ReviewVO vo = new ReviewVO(loginInfo);
+
+		reviewList = ReviewDao.getInstance().select_Review_My(vo);
+
+		for (ReviewVO vo2 : reviewList) {
+			System.out.printf("[%d - %d - %s - %s - %s]\n", vo2.getReviewIdx(), vo2.getMovieIdx(), vo2.getId(),
+					vo2.getReviewDate(), vo2.getReviewText());
+		}
+		
+		
 		System.out.println("삭제할 리뷰번호를 입력하세요.");
 		int deleteReview = scanner.nextInt();
 		
@@ -332,8 +344,19 @@ public class MovieReview {
 		select = scanner.nextInt();
 		
 		if (select == 1) {
-			ReviewVO vo = new ReviewVO(deleteReview);
-			ReviewDao.getInstance().DeleteReview(vo);
+			ReviewVO vo3 = new ReviewVO(deleteReview);
+			ReviewDao.getInstance().DeleteReview(vo3);
+			selectReviewList = ReviewDao.getInstance().select_Review_List();
+			
+			System.out.println("----------------------[Review List]----------------------");
+			System.out.println("[리뷰번호  영화번호  영화제목  닉네임  작성내용  작성일자]");
+			System.out.println();
+			
+			for(selectReviewVO vo1 : selectReviewList) {
+				System.out.printf("[%d - %d - %s - %s - %s - %s]\n", vo1.getReviewIdx(), vo1.getMoviewIdx(), vo1.getMovieTitle(), vo1.getUserId(),
+															         vo1.getReviewText(), vo1.getReviewDate());
+			}
+			System.out.println();
 			System.out.print("[삭제]가 완료되었습니다 홈페이지로 돌아가시겠습니까?  [1.YES  2.NO]");
 			select = scanner.nextInt();
 			
@@ -361,22 +384,31 @@ public class MovieReview {
 	
 	private void updateMyReview() { // TODO: 최규범 수정 전, 해당 id의 리뷰목록 조회
 		System.out.println("[수정할 리뷰번호를 입력하세요]");
-		select = scanner.nextInt();
+		int suIdx = scanner.nextInt();
 		
 		System.out.println("[수정할 내용을 입력하세요]");
 		String text = scanner.next();
 		
-		System.out.printf("[%s] 수정하시겠습니까?  [1.수정   2.취소]", text);
-		int suIdx = scanner.nextInt();
+		System.out.printf("[%s]로 수정하시겠습니까?  [1.수정   2.취소]", text);
+		select = scanner.nextInt();
 		
-		if(suIdx == 1) {
-			ReviewVO vo = new ReviewVO();
+		if(select == 1) {
+			ReviewVO vo = new ReviewVO(suIdx);
+			vo.setReviewText(text);			
 			ReviewDao.getInstance().updateReview(vo);
+			
+			ReviewVO vo2 = new ReviewVO(suIdx,loginInfo);			
+			reviewList = ReviewDao.getInstance().selectUpdatedReview(vo2); // 수정한 것 조회하는 메소드
+			
+			for(ReviewVO vo3 : reviewList) { // 수정내용 출력하는 메소드
+				System.out.printf("[%d - %d - %s - %s - %s]\n", vo3.getReviewIdx(), vo3.getMovieIdx(),
+																vo3.getId(), vo3.getReviewDate(), vo3.getReviewText());
+			}
 			System.out.println();
 			System.out.println("[수정]이 완료되었습니다 홈페이지로 돌아갑니다.");
 			//TODO : 수정완료 후 전체리뷰조회
 			mainpage();
-		}else if (suIdx == 2) {
+		}else if (select == 2) {
 			
 			System.out.println("홈페이지로 돌아가시겠습니까? [1.YES  2.NO]");
 			select = scanner.nextInt();

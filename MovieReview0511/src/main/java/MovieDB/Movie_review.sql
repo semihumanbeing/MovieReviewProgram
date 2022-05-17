@@ -34,7 +34,7 @@ insert into review values(seq_reviewIdx.nextVal, 2, '박길동', '2022-05-14', '심�
 drop table review
 
 select * from REVIEW
-
+select * from review where id = 'as' order by reviewIdx desc
 ----------------------------------------------------------------------------------------
 
 create table users
