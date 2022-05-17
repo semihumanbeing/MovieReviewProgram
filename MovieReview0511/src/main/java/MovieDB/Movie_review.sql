@@ -2,7 +2,7 @@
 create table review 
 (
 	reviewIdx int,
-	movieIdx int,
+	movieIdx  int,
 	id varchar2(100),
 	reviewDate varchar2(100),
 	reviewText varchar2(100) not null
@@ -28,7 +28,7 @@ alter table review
 --Sample Data (김다정) 	 
 insert into review values(seq_reviewIdx.nextVal, 1, '홍길동', '2022-05-14', '안녕하세용용')
 insert into review values(seq_reviewIdx.nextVal, 2, '박길동', '2022-05-14', '심금을 울리는 영화..')
-	
+
 	
 --테이블 지우기
 drop table review
@@ -99,11 +99,34 @@ from review r
 		on r.movieIdx = m.movieIdx
 	order by r.reviewIdx
 
+	
+--리뷰 + 영화 테이블 조인	
+create or replace view selectReview
+as
+select  r.reviewIdx,
+		m.movieIdx,
+		m.movieTitle,
+		u.id,
+		r.reviewText,
+		r.reviewDate
+from review r left outer join users u on r.id = u.id
+			  left outer join movie m on r.movieIdx = m.movieIdx
+order by r.reviewIdx
+
+
+
+	
 --left outer join 조회 -> users, movie, review
 select * from selectAll
+select * from selectReview
+
+select * from selectReview where id = 'as'
 
 --뷰 삭제
 drop view selectAll
+drop view selectReview
+
+
 
 ----------------------------------------------------------------------------------------
 

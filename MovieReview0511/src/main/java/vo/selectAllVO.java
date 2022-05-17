@@ -2,13 +2,12 @@ package vo;
 
 public class selectAllVO {
 	
-	int reviewIdx; // 리뷰인덱스
-	String reviewId; // 리뷰아이디
-	int remoIdx; // 리뷰의 영화인덱스
-	String userId; // 유저아이디
-	int moIdx; // 영화의 영화인덱스
+	int    reviewIdx;  // 리뷰인덱스
+	String reviewId;   // 리뷰아이디
+	int    remoIdx;    // 리뷰의 영화인덱스
+	String userId;     // 유저아이디
+	int    moIdx;      // 영화의 영화인덱스
 	String movieTitle; // 영화제목
-	
 	
 	public int getReviewIdx() {
 		return reviewIdx;
@@ -46,8 +45,5 @@ public class selectAllVO {
 	public void setMovieTitle(String movieTitle) {
 		this.movieTitle = movieTitle;
 	}
-	
-	
-	
 
 }
